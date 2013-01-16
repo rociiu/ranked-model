@@ -200,7 +200,7 @@ module RankedModel
           if ranker.scope
             _finder = _finder.send ranker.scope
           end
-          _finder.default_scopes.each |_default_scope|
+          _finder.default_scopes.each do |_default_scope|
             _default_scope.joins_values.each do |_join_value|
               _finder = _finder.joins(_join_value)
             end
